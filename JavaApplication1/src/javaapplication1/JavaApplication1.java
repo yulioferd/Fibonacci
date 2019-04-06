@@ -17,18 +17,20 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       int n, a = 0, b = 1, c = 1;
+       int n;
         Scanner s = new Scanner(System.in);
         System.out.print("Enter value of n:");
         n = s.nextInt();
-        System.out.print("Fibonacci Series:");
-        for(int i = 1; i <= n; i++)
+        long fibo [] = new long [n];
+        fibo[0]=1;
+        fibo[1]=1;
+        System.out.print("Fibonacci series");
+        for(int i = 2; i < n; i++)
         {
-            a = b;
-            b = c;
-            c = a + b;
-            System.out.print(a+" ");
+           fibo [i] = fibo[i-1] + fibo [i-2];
+        }
+        for (int i = fibo.length ; i!= 0; i--) {
+            System.out.print(" "+ fibo[i-1]);
         }
     }
     }
-   
